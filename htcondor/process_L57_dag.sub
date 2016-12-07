@@ -1,0 +1,35 @@
+JOB A process_L57_01.sub
+VARS A wrs2="P26R27" nscenes="202"
+
+JOB B process_L57_02.sub
+VARS B wrs2="P26R27"
+
+JOB C process_L57_03.sub
+VARS C wrs2="P26R27" nscenes="202"
+
+JOB D process_L57_04.sub
+VARS D wrs2="P26R27" nscenes="202"
+
+JOB E process_L57_05.sub
+VARS E wrs2="P26R27" nscenes="202"
+
+JOB F process_L57_06.sub
+VARS F wrs2="P26R27" nscenes="202"
+
+JOB G process_L57_07.sub
+VARS G wrs2="P26R27"
+
+JOB H process_L57_08.sub
+VARS H wrs2="P26R27" wrs2full="p026r027" beginyr="1984" endyr="2013" vi="NDII" pct="90"
+
+JOB I process_L57_09.sub
+VARS I wrs2="P26R27" wrs2full="p026r027" beginyr="1984" endyr="2013" vi="NDII" pct="90"
+
+PARENT A CHILD B
+PARENT B CHILD C
+PARENT C CHILD D
+PARENT D CHILD E
+PARENT E CHILD F
+PARENT F CHILD G
+PARENT G CHILD H
+PARENT H CHILD I

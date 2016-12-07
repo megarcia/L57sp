@@ -1,0 +1,16 @@
+# process_L57_01.sub
+# UW-Madison HTCondor submit file
+universe = vanilla
+log = process_L57_01_$(wrs2).log
+error = process_L57_01_$(wrs2).err
+executable = process_L57_01.sh
+arguments = $(wrs2) $(Process)
+output = process_L57_01_$(wrs2).out
+should_transfer_files = YES
+when_to_transfer_output = ON_EXIT
+transfer_input_files = python.tar.gz,process_L57_01.py
+request_cpus = 1
+request_memory = 8GB
+request_disk = 8GB
+requirements = (OpSys == "LINUX") && (OpSysMajorVer == 6) && (Target.HasGluster == true)
+queue $(nscenes)
