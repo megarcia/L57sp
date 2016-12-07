@@ -137,50 +137,50 @@ else:
 #
 titlestr = '%s %d-%d Nvalues forest %s %s' % \
     (footprint.lower(), year_begin, year_end, vi_name, npixstr)
-fname = '%s/%d-%d_%s_%s_nvals_allforest_map.png' % \
+fname = '%s/images/%d-%d_%s_%s_nvals_allforest_map.png' % \
     (path, year_begin, year_end, footprint, vi_name.lower())
 image_plot(vi_nvals, UTM_zone, UTM_bounds, 200, titlestr, fname)
 #
 titlestr = '%s %d-%d %d%sile forest %s %s' % \
     (footprint.lower(), year_begin, year_end, pctile, '%', vi_name, npixstr)
-fname = '%s/%d-%d_%s_%s_%dpct_allforest_map.png' % \
+fname = '%s/images/%d-%d_%s_%s_%dpct_allforest_map.png' % \
     (path, year_begin, year_end, footprint, vi_name.lower(), pctile)
 image_plot(vi_qvals, UTM_zone, UTM_bounds, 0.6, titlestr, fname)
 #
 titlestr = '%s %d-%d Median forest %s %s' % \
     (footprint.lower(), year_begin, year_end, vi_name, npixstr)
-fname = '%s/%d-%d_%s_%s_median_allforest_map.png' % \
+fname = '%s/images/%d-%d_%s_%s_median_allforest_map.png' % \
     (path, year_begin, year_end, footprint, vi_name.lower())
 image_plot(vi_median, UTM_zone, UTM_bounds, 0.6, titlestr, fname)
 #
 titlestr = '%s %d-%d Mean forest %s %s' % \
     (footprint.lower(), year_begin, year_end, vi_name, npixstr)
-fname = '%s/%d-%d_%s_%s_mean_allforest_map.png' % \
+fname = '%s/images/%d-%d_%s_%s_mean_allforest_map.png' % \
     (path, year_begin, year_end, footprint, vi_name.lower())
 image_plot(vi_mean, UTM_zone, UTM_bounds, 0.6, titlestr, fname)
 #
 titlestr = '%s %d-%d StDev forest %s %s' % \
     (footprint.lower(), year_begin, year_end, vi_name, npixstr)
-fname = '%s/%d-%d_%s_%s_stdev_allforest_map.png' % \
+fname = '%s/images/%d-%d_%s_%s_stdev_allforest_map.png' % \
     (path, year_begin, year_end, footprint, vi_name.lower())
 image_plot(vi_std, UTM_zone, UTM_bounds, 0.2, titlestr, fname)
 #
 titlestr = '%s %d-%d CV forest %s %s' % \
     (footprint.lower(), year_begin, year_end, vi_name, npixstr)
-fname = '%s/%d-%d_%s_%s_cv_allforest_map.png' % \
+fname = '%s/images/%d-%d_%s_%s_cv_allforest_map.png' % \
     (path, year_begin, year_end, footprint, vi_name.lower())
 vi_cv = np.where(vi_mean > 0.0, vi_std / vi_mean, 0.0)
 image_plot(vi_cv, UTM_zone, UTM_bounds, 0.5, titlestr, fname)
 #
 titlestr = '%s %d-%d Max forest %s %s' % \
     (footprint.lower(), year_begin, year_end, vi_name, npixstr)
-fname = '%s/%d-%d_%s_%s_max_allforest_map.png' % \
+fname = '%s/images/%d-%d_%s_%s_max_allforest_map.png' % \
     (path, year_begin, year_end, footprint, vi_name.lower())
 image_plot(vi_max, UTM_zone, UTM_bounds, 0.6, titlestr, fname)
 #
 titlestr = '%s %d-%d %d%sile Z-score forest %s %s' % \
     (footprint.lower(), year_begin, year_end, pctile, '%', vi_name, npixstr)
-fname = '%s/%d-%d_%s_%s_%dpctZ_allforest_map.png' % \
+fname = '%s/images/%d-%d_%s_%s_%dpctZ_allforest_map.png' % \
     (path, year_begin, year_end, footprint, vi_name.lower(), pctile)
 vi_z = np.where(vi_std > 0.0, ((vi_qvals - vi_mean) / vi_std), 0.0)
 image_plot(vi_z, UTM_zone, UTM_bounds, 2.0, titlestr, fname)
